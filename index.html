@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>STK Kufri Logistics</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+        max-width: 960px;
+        margin: 40px auto;
+        padding: 0 16px;
+        color: #1f2328;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      h1 {
+        font-size: 20px;
+        margin-right: auto;
+      }
+      button {
+        padding: 6px 14px;
+        cursor: pointer;
+      }
+      #status.error {
+        color: #b3261e;
+      }
+      #scopes {
+        color: #656d76;
+        font-size: 12px;
+        word-break: break-all;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 6px 8px;
+        border-bottom: 1px solid #d0d7de;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>STK Kufri Logistics</h1>
+      <span id="user"></span>
+      <button id="login" hidden>Microsoft 로그인</button>
+      <button id="logout" hidden>로그아웃</button>
+    </header>
+
+    <p id="status">초기화 중...</p>
+    <p id="scopes"></p>
+
+    <table id="files" hidden>
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>크기</th>
+          <th>수정한 날짜</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="js/vendor/msal-browser.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
